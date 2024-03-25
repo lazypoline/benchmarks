@@ -1,0 +1,7 @@
+*
+!.gitignore
+
+!*.h
+!*1.conf
+!*12.conf
+

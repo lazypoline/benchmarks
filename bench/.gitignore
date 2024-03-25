@@ -1,0 +1,15 @@
+*
+!.gitignore
+
+!*.sh
+!*.py
+!*.patch
+
+!conf/
+!conf/*
+
+!microbench/
+!microbench/*
+
+!tcc/
+!tcc/*

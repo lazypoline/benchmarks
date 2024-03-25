@@ -1,0 +1,13 @@
+*
+!*.sh
+!*.md
+!.gitignore
+
+!src/
+!src/*
+
+!microbench/
+!microbench/*
+
+!bench/
+!bench/*

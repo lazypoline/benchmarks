@@ -1,0 +1,2 @@
+#define NUM_SYSCALLS    100000000
+#define SYSCALL_NO      500
