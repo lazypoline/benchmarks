@@ -119,9 +119,3 @@ The benchmarks for nginx and lighttpd web servers assess lazypoline's impact on 
 ### Notes:
 
 - Replace `/path/to/lazypoline` with the actual paths where lazypoline and its artifacts are located on your system.
-
-
-
-
-
-
