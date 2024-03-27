@@ -112,7 +112,7 @@ The benchmarks for nginx and lighttpd web servers assess lazypoline's impact on 
 ./bench/bench_nginx.sh /path/to/benchmarks
 ```
 -  Estimated Duration: Approximately 292 minutes.
--  Outputs: Generates Figure 5-a, available at /path/to/benchmarks/bench/log/${date}_nginx.
+-  Outputs: Generates Figure 5-a, available at `/path/to/benchmarks/bench/log/${date}_nginx`.
 
 ###### Lighttpd
 
@@ -120,7 +120,7 @@ The benchmarks for nginx and lighttpd web servers assess lazypoline's impact on 
 ./bench/bench_lighttpd.sh /path/to/benchmarks
 ```
 -  Estimated Duration: Approximately 322 minutes.
--  Outputs: Generates Figure 5-b,  available at path/to/lazypoline/bench/log/${date}_lighttpd.
+-  Outputs: Generates Figure 5-b,  available at `/path/to/lazypoline/bench/log/${date}_lighttpd`.
 
 
 ### Notes:
