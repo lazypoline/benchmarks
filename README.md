@@ -24,18 +24,23 @@ echo off | sudo tee /sys/devices/system/cpu/smt/control
 ```
 
 ## Getting Started 
+This repository can be cloned using the following commands
+```bash
+git clone ---recursive https://github.com/lazypoline/benchmarks.git
+```
+
 To install all necessary dependencies for lazypoline, run the following command:
 
 ```bash
-./install.sh /path/to/lazypoline
+./install.sh /path/to/benchmarks
 ```
 
 ## Exhaustiveness  
 
 ```bash
-./bench/tcc_run.sh /path/to/lazypoline
+./bench/tcc_run.sh /path/to/benchmarks
 ```
-- It logs all intercepted system calls, leveraging both zpoline and lazypoline, into the directory /path/to/lazypoline/bench/log/, with the logs named according to the date format ${date}_tcc
+- It logs all intercepted system calls, leveraging both zpoline and lazypoline, into the directory `/path/to/benchmarks/bench/log`, with the logs named according to the date format `${date}_tcc`
 - Expected result: zpoline will not be able to intercept the getpid system call, which is identified by the syscall number 39. In contrast, lazypoline is designed to capture such syscalls from dynamically generated code as well
 
 ## Performance Evaluations 
@@ -77,14 +82,14 @@ By default, the web servers are pinned to the first 12 cores (0-11):
 To run the entire benchmark suite, use the following command:
 
 ```bash
-./run_benchmark.sh /path/to/lazypoline
+./run_benchmark.sh /path/to/benchmarks
 ```
 
 - Estimated Duration: Approximately 655 minutes.
 - Outputs: 
-    - Computes the microbenchmark overhead relative to the baseline, as detailed in Table II, and the maximum standard deviation located in `/path/to/lazypoline/bench/log/${date}/output.txt`. Additionally, the script generates Figure 4, which can be found at `/path/to/lazypoline/bench/log/${date}_micro`
-    - Generates Figure 5-a, available at `/path/to/lazypoline/bench/log/${date}_nginx`. The static analysis information referenced in the paper is available at `/path/to/lazypoline/bench/log/${date}_nginx/output.txt`.
-    - Generates Figure 5-b,  available at `path/to/lazypoline/bench/log/${date}_lighttpd`. The static analysis information referenced in the paper is available at `/path/to/lazypoline/bench/log/${date}_nginx/output.txt`
+    - Computes the microbenchmark overhead relative to the baseline, as detailed in Table II, and the maximum standard deviation located in `/path/to/benchmarks/bench/log/${date}/output.txt`. Additionally, the script generates Figure 4, which can be found at `/path/to/benchmarks/bench/log/${date}_micro`
+    - Generates Figure 5-a, available at `/path/to/benchmarks/bench/log/${date}_nginx`. The static analysis information referenced in the paper is available at `/path/to/benchmarks/bench/log/${date}_nginx/output.txt`.
+    - Generates Figure 5-b,  available at `path/to/lazypoline/bench/log/${date}_lighttpd`. The static analysis information referenced in the paper is available at `/path/to/benchmarks/bench/log/${date}_nginx/output.txt`
 
 
 
@@ -93,26 +98,26 @@ To run the entire benchmark suite, use the following command:
 
 ##### Micro Benchmarks
 ```bash
-./bench/bench_micro.sh /path/to/lazypoline
+./bench/bench_micro.sh /path/to/benchmarks
 ```
 
 - Estimated Duration: Approximately 41 minutes.
-- Outputs: Computes the microbenchmark overhead relative to the baseline, as detailed in Table II, and the maximum standard deviation located in `/path/to/lazypoline/bench/log/${date}/outputfile`. Additionally, the script generates Figure 4, which can be found at `/path/to/lazypoline/bench/log/${date}_micro`
+- Outputs: Computes the microbenchmark overhead relative to the baseline, as detailed in Table II, and the maximum standard deviation located in `/path/to/benchmarks/bench/log/${date}/outputfile`. Additionally, the script generates Figure 4, which can be found at `/path/to/benchmarks/bench/log/${date}_micro`
 
 ##### WebServers
 The benchmarks for nginx and lighttpd web servers assess lazypoline's impact on web service performance.
 
 ###### Nginx
 ```bash
-./bench/bench_nginx.sh /path/to/lazypoline
+./bench/bench_nginx.sh /path/to/benchmarks
 ```
 -  Estimated Duration: Approximately 292 minutes.
--  Outputs: Generates Figure 5-a, available at /path/to/lazypoline/bench/log/${date}_nginx.
+-  Outputs: Generates Figure 5-a, available at /path/to/benchmarks/bench/log/${date}_nginx.
 
 ###### Lighttpd
 
 ```bash
-./bench/bench_lighttpd.sh /path/to/lazypoline
+./bench/bench_lighttpd.sh /path/to/benchmarks
 ```
 -  Estimated Duration: Approximately 322 minutes.
 -  Outputs: Generates Figure 5-b,  available at path/to/lazypoline/bench/log/${date}_lighttpd.
@@ -120,4 +125,4 @@ The benchmarks for nginx and lighttpd web servers assess lazypoline's impact on 
 
 ### Notes:
 
-- Replace `/path/to/lazypoline` with the actual paths where lazypoline and its artifacts are located on your system.
+- Replace `/path/to/benchmarks` with the actual paths where lazypoline and its artifacts are located on your system.
