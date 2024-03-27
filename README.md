@@ -1,8 +1,10 @@
-# lazypoline Evaluation
+# lazypoline Artifact Evaluation
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10372035.svg)](https://doi.org/10.5281/zenodo.10372035)
 
-This repo holds the experiments we did to evaluate lazypoline for our DSN'24 paper "System Call Interposition Without Compromise". 
+This repository contains artifacts for the paper "System Call Interposition Without Compromise" that will appear at [IEEE DSN'24](https://dsn2024uq.github.io/). 
+
+Below, you'll find detailed instructions for reproducing the results of our paper.
 
 ## System Requirements
 - Linux Kernel version 5.11 or higher.
@@ -13,7 +15,7 @@ This repo holds the experiments we did to evaluate lazypoline for our DSN'24 pap
     3. Docker runs a security sandbox by default (using seccomp). This majorly interferes with our syscall interposition benchmarks
     4. For the web server benchmarks, network localhost throughput should not be limited due to any Docker port mappings
 
-## System setup
+## System Setup
 Throughout the performance evaluation, we disable hyperthreading to get more reproducible results.
 You can generally do this in your computer's BIOS. Alternatively, you can do so at run time, too. 
 In Ubuntu 22.04 on an Intel CPU, you can do the following:
@@ -39,7 +41,7 @@ To install all necessary dependencies for lazypoline, run the following command:
 ## Performance Evaluations 
 
 ### Benchmark Suite
-This benchmark suite includes tests that takes approxitamely 655 minutes. To prevent losing your session, it's recommended to use the `screen` command. `screen` allows you to detach from a session and reattach later, ensuring that your benchmarks can continue running even if you're disconnected.
+This benchmark suite includes tests that takes approxitamely 655 minutes in total. To prevent losing your session, it's recommended to use the `screen` command. `screen` allows you to detach from a session and reattach later, ensuring that your benchmarks can continue running even if you're disconnected.
 
 #### Our Setup
 We ran all experiments on a 48-core Intel Xeon Gold 5318S CPU running at 2.10 GHz and 1.0 TiB of RAM. We disable hyperthreading on the CPU to reduce measurement noise.
