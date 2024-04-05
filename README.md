@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10372035.svg)](https://doi.org/10.5281/zenodo.10372035)
 
-This repository contains artifacts for the paper "System Call Interposition Without Compromise" that will appear at [IEEE DSN'24](https://dsn2024uq.github.io/). 
+This repository contains artifacts for the paper ["System Call Interposition Without Compromise"](https://adriaanjacobs.github.io/files/dsn24lazypoline.pdf) that will appear at [IEEE DSN'24](https://dsn2024uq.github.io/). 
 
 Below, you'll find detailed instructions for reproducing the results of our paper.
 
