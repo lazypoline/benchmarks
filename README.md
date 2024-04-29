@@ -38,7 +38,7 @@ To install all necessary dependencies for lazypoline, run the following command:
 ## Exhaustiveness  
 
 ```bash
-./bench/tcc_run.sh /path/to/benchmarks
+./bench/run_tcc.sh /path/to/benchmarks
 ```
 - It logs all intercepted system calls, leveraging both zpoline and lazypoline, into the directory `/path/to/benchmarks/bench/log`, with the logs named according to the date format `${date}_tcc`
 - Expected result: zpoline will not be able to intercept the getpid system call, which is identified by the syscall number 39. In contrast, lazypoline is designed to capture such syscalls from dynamically generated code as well
