@@ -108,11 +108,10 @@ check_sudo() {
 
 check_distro
 check_root
-check_sudo
 start
 
 print_section "apt dependencies"
-sudo apt update && sudo apt install -y git make screen curl cmake clang libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev libpcre2-dev binutils-dev python3 python3.10-venv python3-pip tcc
+sudo apt update && sudo apt install -y git make screen curl cmake clang libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev libpcre2-dev binutils-dev python3 python3.10-venv python3-pip tcc wrk
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install matplotlib pandas scipy seaborn
